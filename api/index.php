@@ -28,6 +28,13 @@
       <tbody>
         <?php
 
+<?php
+echo "<pre>HOST=" . var_export(getenv('MYSQL_HOST'), true)
+  . " USER=" . var_export(getenv('MYSQL_USER'), true)
+  . " PASS_LEN=" . strlen((string) getenv('MYSQL_PASSWORD'))
+  . "</pre>";
+?>
+
         $conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), "SG");
 
         $cadenaSQL = "select * from s_customer";
